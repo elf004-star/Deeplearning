@@ -1,0 +1,140 @@
+:root {
+  --bg-color: #fffaf0;
+  /* Floral White */
+  --grid-color: #e0e0e0;
+
+  /* Cartoon Palette */
+  --color-primary: #ff9f43;
+  /* Orange/Yellow */
+  --color-secondary: #54a0ff;
+  /* Blue */
+  --color-accent: #ff6b6b;
+  /* Red */
+  --color-success: #1dd1a1;
+  /* Green */
+  --color-text: #222f3e;
+  --color-border: #000000;
+
+  /* Component Styles */
+  --border-width: 2px;
+  --border-radius: 12px;
+  --box-shadow: 3px 3px 0px var(--color-border);
+  --box-shadow-hover: 5px 5px 0px var(--color-border);
+
+  font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+  color: var(--color-text);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(var(--grid-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+  overflow: hidden;
+  /* Canvas handles scrolling */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  box-shadow: var(--box-shadow);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--color-border);
+}
+
+/* Hover Scale Effect */
+.hover-scale {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), z-index 0s;
+}
+
+.hover-scale:hover {
+  transform: scale(2);
+  z-index: 1000 !important;
+}
+
+/* No hover scale for specific components */
+.no-hover-scale {
+  transition: none;
+}
+
+.no-hover-scale:hover {
+  transform: none;
+  z-index: auto;
+}
+
+/* Increment/Decrement Buttons */
+.btn-increment,
+.btn-decrement {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-increment {
+  background: var(--color-success);
+  color: white;
+}
+
+.btn-increment:hover {
+  background: #16a085;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(29, 209, 161, 0.3);
+}
+
+.btn-decrement {
+  background: var(--color-accent);
+  color: white;
+}
+
+.btn-decrement:hover {
+  background: #ee5a52;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+}
+
+.btn-increment:active,
+.btn-decrement:active {
+  transform: translateY(0);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 5px;
+}
