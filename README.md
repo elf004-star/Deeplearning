@@ -1,16 +1,37 @@
-# React + Vite
+# Neural Playground
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个基于浏览器的交互式神经网络可视化工具。可在画布上拖拽节点、连接神经元，并实时调整权重与偏置。
 
-Currently, two official plugins are available:
+## 快速启动
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**环境要求：** Node.js 18+
 
-## React Compiler
+```bash
+# 1. 安装依赖
+npm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# 2. 启动开发服务器
+npm run dev
+```
 
-## Expanding the ESLint configuration
+启动后访问 [http://localhost:5173](http://localhost:5173)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 其他命令
+
+```bash
+# 构建生产版本（输出至 dist/）
+npm run build
+
+# 预览生产构建
+npm run preview
+
+# 代码检查
+npm run lint
+```
+
+## 使用方法
+
+- 点击底部工具栏的 **Input / Neuron / Output** 按钮添加节点
+- **拖拽节点**移动位置
+- **拖拽端口**（节点左右两侧的圆点）连接节点，靠近目标端口时自动吸附
+- 点击连接线上的权重标签可修改权重值
